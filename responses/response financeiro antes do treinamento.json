@@ -1,0 +1,16 @@
+{
+    "model": "llama3.2:1b",
+    "created_at": "2026-10-23T12:33:47.173901131Z",
+    "message": {
+        "role": "assistant",
+        "content": "O chamado pode ser classificado como \"FINANCEIRO\""
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4462383079,
+    "load_duration": 2857069182,
+    "prompt_eval_count": 63,
+    "prompt_eval_duration": 905490000,
+    "eval_count": 14,
+    "eval_duration": 695160000
+}
