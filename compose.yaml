@@ -1,0 +1,24 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+      - ./treinamento/output/merged:/models/llama32-suporte:ro
+      - ./treinamento/Modelfile:/models/Modelfile:ro
+
+  trainer:
+    profiles: ["training"]
+    build:
+      context: ./treinamento
+    environment:
+      HF_TOKEN: ${HF_TOKEN}
+      BASE_MODEL: meta-llama/Llama-3.2-1B-Instruct
+    volumes:
+      - ./treinamento:/workspace
+      - huggingface-cache:/root/.cache/huggingface
+
+volumes:
+  ollama-data:
+  huggingface-cache:
